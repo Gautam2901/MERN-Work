@@ -1,0 +1,39 @@
+
+<nav class="navbar navbar-expand-sm bg-dark">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/home">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/about">About us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/contact">Contact us</a>
+      </li>
+      <%
+        if(!isLoggedIn){
+      %>
+      <li class="nav-item"></li>
+        <a class="nav-link" href="/admin/sign-in">Sign In</a>
+      </li>
+      <%}else{%>
+      <li class="nav-item"></li>
+        <a class="nav-link" href="/category/add">Add-category</a>
+      </li>  
+      <li class="nav-item"></li>
+        <a class="nav-link" href="/category/view">View-category</a>
+      </li>  
+      <li class="nav-item"></li>
+        <a class="nav-link" href="/product/add">Add-product</a>
+      </li>
+      <li class="nav-item"></li>
+        <a class="nav-link" href="/product/view">View product</a>
+      </li>
+      <li class="nav-item"></li>
+        <form action="/admin/signout" method="post">
+          <button type="submit" class="btn btn-primary">Sign out</button>
+        </form>
+      </li>
+      <%}%>
+    </ul>
+  </nav>
